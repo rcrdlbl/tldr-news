@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "./lib/tldr_news"
+
+TldrNews::CLI.new.call
