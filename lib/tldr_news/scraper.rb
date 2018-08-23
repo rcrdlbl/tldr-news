@@ -6,10 +6,11 @@ class TldrNews::Scraper
 
   def scrape_articles
     self.get_page.css('div.listing')
-    binding.pry
   end
 
   def make_articles
-
+    scrape_articles.each do |listing|
+      TldrNews::Article.new_from_html(listing)
+    end
   end
 end
