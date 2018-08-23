@@ -1,6 +1,7 @@
 class TldrNews::CLI
   def call
     puts "TLDR NEWS:"
+    TldrNews::Scraper.new.make_articles
   end
 
   def headline_list

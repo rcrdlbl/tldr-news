@@ -23,4 +23,6 @@ class TldrNews::Article
     )
   end
 
+  
+
 end
