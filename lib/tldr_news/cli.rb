@@ -12,6 +12,7 @@ class TldrNews::CLI
     menu
     puts ""
     puts "Thanks Bye!"
+    exit
   end
 
   def headline_list
@@ -47,7 +48,13 @@ class TldrNews::CLI
 
   def again?
     puts "Read another article? (y/n)"
-    input = gets.strip
+    input = nil
+    while input != "n"
+      input = gets.strip
+      if input == "y"
+        start
+      end
+    end
   end
 
 end
