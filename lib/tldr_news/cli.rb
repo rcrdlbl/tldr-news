@@ -23,7 +23,6 @@ class TldrNews::CLI
   end
 
   def article_info(article)
-    #this will show the article with a link to the full article
     puts article.headline
     puts ""
     puts article.contents.strip
