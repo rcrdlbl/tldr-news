@@ -1,5 +1,9 @@
 require 'pry'
 class TldrNews::Scraper
+
+  def initialize
+  end
+  
   def get_page
     Nokogiri::HTML(open('https://tldrworldnews.com/'))
   end

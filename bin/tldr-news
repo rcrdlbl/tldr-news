@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require "./lib/tldr_news"
 require 'pry'
-scr = TldrNews::Scraper.new
-binding.pry
+# scr = TldrNews::Scraper.new
+# binding.pry
 TldrNews::CLI.new.call
+TldrNews::CLI.new.start

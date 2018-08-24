@@ -12,8 +12,8 @@ class TldrNews::CLI
     if input == "exit"
       "Thanks, Bye!"
       exit
-    elsif input = ""
-      puts "I don't get it"
+    elsif input == ""
+      puts "I don't get it."
     else
       art = TldrNews::Article.find(input)
       article_info(art)
@@ -36,7 +36,7 @@ class TldrNews::CLI
     puts "Posted #{article.time}"
   end
 
-  def menu
-    #this will let the user select an article to read more about
-  end
+  # def menu
+  #   #this will let the user select an article to read more about
+  # end
 end
