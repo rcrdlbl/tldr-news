@@ -6,18 +6,12 @@ class TldrNews::CLI
 
   def start
     headline_list
+    puts ""
     puts "If you'd like to read more about a headline, enter it's number."
     puts "Otherwise type exit"
-    input = gets.strip
-    if input == "exit"
-      "Thanks, Bye!"
-      exit
-    elsif input == ""
-      puts "I don't get it."
-    else
-      art = TldrNews::Article.find(input)
-      article_info(art)
-    end
+    menu
+    puts ""
+    puts "Thanks Bye!"
   end
 
   def headline_list
@@ -31,12 +25,29 @@ class TldrNews::CLI
     #this will show the article with a link to the full article
     puts article.headline
     puts ""
-    puts article.contents
+    puts article.contents.strip
+    puts ""
     puts "To read even more, visit #{article.url}"
     puts "Posted #{article.time}"
   end
 
-  # def menu
-  #   #this will let the user select an article to read more about
-  # end
+  def menu
+      input = gets.strip
+      if input == ""
+        puts ""
+        puts "I don't get it."
+      else
+        puts ""
+        art = TldrNews::Article.find(input)
+        article_info(art)
+        puts ""
+      end
+      again?
+  end
+
+  def again?
+    puts "Read another article? (y/n)"
+    input = gets.strip
+  end
+
 end
