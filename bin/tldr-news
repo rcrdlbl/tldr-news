@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require_relative "../lib/tldr_news.rb"
+require_relative "./lib/tldr_news.rb"
 require 'pry'
 TldrNews::CLI.new.call
 TldrNews::CLI.new.start
