@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = TldrNews::VERSION
   spec.authors       = ["'Przemyslaw Dabrowski'"]
   spec.email         = ["'bluh@outlook.com'"]
-
+  spec.executables << "tldr-news"
   spec.summary       = %q{A CLI interface for tldrworldnews.com}
   spec.homepage      = "https://github.com/rcrdlbl/tldr-news"
   spec.license       = "MIT"
