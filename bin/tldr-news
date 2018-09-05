@@ -1,5 +1,3 @@
 #!/usr/bin/env ruby
 require "./lib/tldr_news"
-require 'pry'
 TldrNews::CLI.new.call
-TldrNews::CLI.new.start

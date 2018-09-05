@@ -2,6 +2,7 @@ class TldrNews::CLI
   def call
     puts "TLDR NEWS:"
     TldrNews::Scraper.new.make_articles
+    start
   end
 
   def start
@@ -33,7 +34,7 @@ class TldrNews::CLI
 
   def menu
       input = gets.strip
-      if input == ""
+      if !valid_input?(input)
         puts ""
         puts "I don't get it."
       else
@@ -46,14 +47,22 @@ class TldrNews::CLI
   end
 
   def again?
-    puts "Read another article? (y/n)"
+
     input = nil
     while input != "n"
-      input = gets.strip
+      puts "Read another article? (y/n)"
+      input = gets.strip.downcase
       if input == "y"
         start
+      elsif input != "n"
+        puts "I don't get that input."
+
       end
     end
+  end
+
+  def valid_input?(input)
+    input.to_i <= TldrNews::Article.all.length && input.to_i > 0 ? true : false
   end
 
 end
